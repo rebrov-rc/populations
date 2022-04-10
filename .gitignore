@@ -1,0 +1,12 @@
+.idea/
+.DS_Store
+
+tmp/
+
+Thumbs.db
+
+*.txt
+
+*_old
+*_backup
+out/
