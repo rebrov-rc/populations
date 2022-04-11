@@ -8,7 +8,7 @@ public interface Filter {
         if (x.getSex().equals(Sex.WOMAN) && (age >= 18 && age < 60)) {
             result = true;
         } else if (x.getSex().equals(Sex.MAN) && (age >= 18 && age < 65)) {
-
+            result = true;
         }
         return (result);
     }
