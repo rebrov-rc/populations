@@ -1,4 +1,4 @@
-package persons;
+package com.project;
 
 public enum Education {
     ELEMENTARY,

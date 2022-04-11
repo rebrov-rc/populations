@@ -1,11 +1,6 @@
 package com.project;
 
-import persons.Education;
-import persons.Person;
-import persons.Sex;
-
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,7 +12,7 @@ public class Main {
         List<String> families = Arrays.asList("Evans", "Young", "Harris", "Wilson", "Davies", "Adamson", "Brown");
         Collection<Person> persons = new ArrayList<>();
 
-        for (int i = 0; i < 10_000; i++) {
+        for (int i = 0; i < 1000; i++) {
             persons.add(new Person(
                     names.get(new Random().nextInt(names.size())),
                     families.get(new Random().nextInt(families.size())),
@@ -44,7 +39,8 @@ public class Main {
 
         Stream<Person> familySorted = persons.stream();
 
-        List<Person> str2 = familySorted.filter(x -> x.getEducation().equals("HIGHER"))
+        List<Person> str2 = familySorted.filter(x -> x.getEducation().equals(Education.HIGHER))
+                    .filter(Filter::flt)
                     .sorted(Comparator.comparing(Person::getFamily))
                     .collect(Collectors.toList());
 
